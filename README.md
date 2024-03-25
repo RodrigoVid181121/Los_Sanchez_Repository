@@ -20,6 +20,8 @@ Javier Ernesto Perez Joaquin
 
 Enlace a Trello:
 
+https://trello.com/invite/b/gsMZigXS/ATTId50424fb77cbdb79524a95d0affdda6532891519/proyecto-lis
+
 Enlaces a Mockups:
 
 Vista Cliente: https://www.figma.com/file/1gKNkkDxU5Py9QOzgptqad/LosSanchez-WebPage?type=view&node-id=0-1&mode=view 
