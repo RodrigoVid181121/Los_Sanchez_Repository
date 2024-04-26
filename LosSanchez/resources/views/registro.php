@@ -20,69 +20,86 @@
             <h1>Registro</h1>
             <p>Ingrese sus datos</p>
 
-            <button class="googleButton mb-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Sign up with Google</button><br>
+            <button class="googleButton mb-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Sign up
+                with Google</button><br>
 
-            <div class="input-group inputDiv">
-                <span class="input-group-append iconContainer">
-                    <span class="input-group-text bg-transparent sideIcon">
-                        <i class="bi bi-person"></i>
+            <form action="" method="">
+
+                <div class="input-group inputDiv">
+                    <span class="input-group-append iconContainer">
+                        <span class="input-group-text bg-transparent sideIcon">
+                            <i class="bi bi-person"></i>
+                        </span>
                     </span>
-                </span>
-                <input type="text" class="form-control textInput" placeholder="Nombres">
+                    <input type="text" class="form-control textInput" id="inputNames" placeholder="Nombres">
 
-            </div>
-            <div class="input-group inputDiv">
-                <span class="input-group-append iconContainer">
-                    <span class="input-group-text bg-transparent sideIcon">
-                        <i class="bi bi-person"></i>
+                </div>
+                <div class="error"></div>
+
+                <div class="input-group inputDiv">
+                    <span class="input-group-append iconContainer">
+                        <span class="input-group-text bg-transparent sideIcon">
+                            <i class="bi bi-person"></i>
+                        </span>
                     </span>
-                </span>
-                <input type="text" class="form-control textInput" placeholder="Apellidos">
+                    <input type="text" class="form-control textInput" id="inputSurNames" placeholder="Apellidos">
 
-            </div>
-            <div class="input-group inputDiv">
-                <span class="input-group-append iconContainer">
-                    <span class="input-group-text bg-transparent sideIcon">
-                        <i class="bi bi-telephone-fill"></i>
+                </div>
+                <div class="error"></div>
+
+                <div class="input-group inputDiv">
+                    <span class="input-group-append iconContainer">
+                        <span class="input-group-text bg-transparent sideIcon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </span>
                     </span>
-                </span>
-                <input type="number" class="form-control textInput" placeholder="Telefono">
+                    <input type="number" class="form-control textInput" id="inputPhone" maxlength="8" placeholder="Telefono">
 
-            </div>
-            <div class="input-group inputDiv">
-                <span class="input-group-append iconContainer">
-                    <span class="input-group-text bg-transparent sideIcon">
-                        <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div class="error"></div>
+
+                <div class="input-group inputDiv">
+                    <span class="input-group-append iconContainer">
+                        <span class="input-group-text bg-transparent sideIcon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </span>
                     </span>
-                </span>
-                <input type="email" class="form-control textInput" placeholder="Email">
+                    <input type="email" class="form-control textInput" id="inputEmail" placeholder="Email">
 
-            </div>
-            <div class="input-group inputDiv">
-                <span class="input-group-append iconContainer">
-                    <span class="input-group-text bg-transparent sideIcon">
-                        <i class="bi bi-lock"></i>
+                </div>
+                <div class="error"></div>
+
+                <div class="input-group inputDiv">
+                    <span class="input-group-append iconContainer">
+                        <span class="input-group-text bg-transparent sideIcon">
+                            <i class="bi bi-lock"></i>
+                        </span>
                     </span>
-                </span>
-                <input type="password" class="form-control passInput" placeholder="Contraseña">
-                <span class="input-group-append showIconContainer">
-                    <span class="input-group-text bg-transparent showIcon">
-                        <i class="bi bi-eye-fill"></i>
+                    <input type="password" class="form-control passInput classInputPasswords" id="inputPass"
+                        placeholder="Contraseña">
+                    <span class="input-group-append showIconContainer">
+                        <span class="input-group-text bg-transparent showIcon">
+                            <i class="bi bi-eye-slash-fill" id="showButton"></i>
+                        </span>
                     </span>
-                </span>
-            </div>
+                </div>
+                <div class="error"></div>
 
-            <div class="input-group inputDiv">
-                <span class="input-group-append iconContainer">
-                    <span class="input-group-text bg-transparent sideIcon">
-                        <i class="bi bi-lock"></i>
+                <div class="input-group inputDiv">
+                    <span class="input-group-append iconContainer">
+                        <span class="input-group-text bg-transparent sideIcon">
+                            <i class="bi bi-lock"></i>
+                        </span>
                     </span>
-                </span>
-                <input type="password" class="form-control textInput" placeholder="Repita la Contraseña">
+                    <input type="password" class="form-control textInput classInputPasswords" id="inputrepPass"
+                        placeholder="Repita la Contraseña">
 
-            </div>
+                </div>
+                <div class="error"></div>
 
-            <button class="customButton mt-3">Registrarse</button><br>
+                <button class="customButton mt-3" id="btnRegister" disabled>Registrarse</button><br>
+
+            </form>
 
 
         </div>
@@ -92,6 +109,7 @@
 
 
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/registroCliente.js"></script>
 </body>
 
 </html>

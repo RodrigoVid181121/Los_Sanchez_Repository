@@ -38,11 +38,11 @@
                     </span>
                 </span>
 
-                <input type="password" class="form-control passInput" placeholder="Contraseña">
+                <input type="password" class="form-control passInput" id="idInputPassword" placeholder="Contraseña">
 
                 <span class="input-group-append showIconContainer">
                     <span class="input-group-text bg-transparent showIcon">
-                    <i class="bi bi-eye-fill"></i>
+                    <i class="bi bi-eye-slash-fill" id="showButton"></i>
                     </span>
                 </span>
 
