@@ -1,9 +1,19 @@
-@extends('Layouts.plantilla')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="Container">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrap-icons.min.css" />
+    <title>Registro</title>
+</head>
+
+<body>
+    <div class="Container">
         <div class="L-R-Header fontCenter Logo">
-            <img src="/Menu_Reservaciones/img/Logo_Sanchez.png" alt="Los Sanchez Logo" class="logo">
+            <img src="../../../img/Logo_Sanchez.png" alt="Los Sanchez Logo" class="logo">
         </div>
         <div class="L-R-Body fontCenter fontwhite">
 
@@ -97,4 +107,9 @@
     </div>
 
 
-@stop
+
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/registroCliente.js"></script>
+</body>
+
+</html>
