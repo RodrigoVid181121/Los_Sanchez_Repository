@@ -1,4 +1,4 @@
-@extends('Layouts.Layout')
+@extends('Layouts.plantilla')
 @section('content')
 
 <div class="row">
