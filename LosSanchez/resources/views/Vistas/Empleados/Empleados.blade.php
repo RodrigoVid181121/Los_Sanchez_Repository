@@ -7,7 +7,7 @@
                 <div class="col-sm">
                     <h1 class="mb-3">Registro</h1>
                     <p>Ingresa tus datos</p>
-                    <button class="googleButton mb-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png">
+                    <button class="googleButton mb-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png"/>
                         Sign up with Google</button><br>
                     <form action="" method="">
 
