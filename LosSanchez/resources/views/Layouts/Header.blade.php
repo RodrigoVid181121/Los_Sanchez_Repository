@@ -3,7 +3,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1 menu">
                             <li class="nav-item">
-                                <a class="nav-link"><img src="/LIS-P/img/Logo_Sanchez.png"style="height:4vw;"/></a>
+                                <a class="nav-link"><img src="../../img/Logo_Sanchez.png"style="height:4vw;"/></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">Home</a>
@@ -23,7 +23,7 @@
                                 <a class="nav-link" style="color:blue;">Inicio Sesion</a>
                                 </div>
                                 <div class="sesion">
-                                    <img src="/LIS-P/img/Icon-User.png" style="padding-left:2vw;">
+                                    <img src="../../img/Icon-User.png" style="padding-left:2vw;">
                                     <h3>USUARIO</h3>
                                     <ul>
                                     <li>

@@ -10,6 +10,8 @@
         </div>
     </div>
         <div class="col-sm" style="top: 0; margin-top: 0;">
-            <img src="/LIS-P/img/Food.png" class="img-fo" >
+            <img src="../../img/Food.png" class="img-fo" >
     </div>                                                 
 </div>
+
+@stop
