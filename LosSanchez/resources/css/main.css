@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
 }
-  
 
 /*-------------Contenedores-----------------------*/
 
@@ -71,6 +70,7 @@ body {
     border-radius: 15px;
     border-left: 0;
     margin-right: 25%;
+    margin-left: 25%;
     margin-bottom: 2px;
 }
 
@@ -97,7 +97,7 @@ body {
 .employeeContainer{
     transition: 0.3s;
     width: 100%;
-    padding: 5px;
+    padding: 15px;
     border-radius: 15px;
     background-color: rgba(206, 211, 255,0.5);
     color: black;
@@ -106,7 +106,7 @@ body {
 .employeeContainer:hover{
     transition: 0.3s;
     width: 100%;
-    padding: 5px;
+    padding: 13px;
     border-radius: 15px;
     background-color: rgba(206, 211, 255,1);
     color: black;
@@ -133,6 +133,10 @@ body {
  .error{
     transition: 0.5s;
     color: red;
+ }
+
+ .txtempl{
+    margin: 10px;
  }
 /*------------------Botones y otros------------------------*/
 
@@ -179,19 +183,21 @@ select{
 .deleteButton{
 background-color: red;
 color: white;
-border-radius: 15px;
+border-radius: 8px;
 border-color: transparent;
 height: 40px;
 width: 40px;
+margin-left:0;
 }
 
 .editButton{
 background-color: #374DFF;
 color: white;
-border-radius: 15px;
+border-radius: 8px;
 border-color: transparent;
 height: 40px;
 width: 40px;
+margin-right: 0;
 }
 
 .logo{
