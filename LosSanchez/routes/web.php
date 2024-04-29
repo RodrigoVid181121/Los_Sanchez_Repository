@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('Vistas.Home');
+    return view('Vistas.InicioSesion');
 });
 
 Route::resource('Vistas/Categorias','CategoriaController');
