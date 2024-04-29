@@ -1,7 +1,7 @@
 @extends('Layouts.plantilla')
 @section('content')
 
-<div class="Container">
+<div class="container">
         <div class="L-R-Body fontCenter fontwhite">
             <div class="row m-0">
                 <div class="col-sm">
