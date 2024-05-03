@@ -17,5 +17,12 @@ Route::get('/registro', function () {
     return view('Vistas.Clientes.Registro');
 });
 
+<<<<<<< HEAD
+=======
+Route::get('/Vistas/Clientes/Registro', function () {
+    return view('registro');
+});
+
+>>>>>>> Javier
 Route::resource('Vistas/Categorias','CategoriaController');
 Route::resource('Vistas/Menu', 'MenuController');
