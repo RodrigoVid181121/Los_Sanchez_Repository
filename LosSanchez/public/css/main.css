@@ -7,11 +7,13 @@ body {
 
 .container {
     margin: 0;
+    padding: 0 !important; /*Cambio 1*/
     gap: 1.5em;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
     flex: 1;
+    min-width: 100%; /*Cambio 2*/
 }
 
 .L-R-Header {
@@ -33,11 +35,13 @@ body {
 
 .showIconContainer{
     margin-right: 25%;
+    height: 100%; /*Cambio 3*/
 
 }
 
 .iconContainer{
     margin-left: 25% !important;
+    height: 100%; /*Cambio 4*/
 }
 
 .inputDiv .sideIcon{

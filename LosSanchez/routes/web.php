@@ -17,9 +17,5 @@ Route::get('/registro', function () {
     return view('Vistas.Clientes.Registro');
 });
 
-Route::get('/Vistas/Clientes/Registro', function () {
-    return view('registro');
-});
-
 Route::resource('Vistas/Categorias','CategoriaController');
 Route::resource('Vistas/Menu', 'MenuController');
