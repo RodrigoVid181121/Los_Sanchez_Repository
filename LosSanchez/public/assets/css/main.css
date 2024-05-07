@@ -5,7 +5,7 @@ body {
 
 /*-------------Contenedores-----------------------*/
 
-.container {
+.Container {
     margin: 0;
     gap: 1.5em;
     justify-content: center;
@@ -26,33 +26,24 @@ body {
 }
 
 .L-R-Body {
-    background-color: #E28F46;
+    background-color: #FF8F45;
     padding-top: 25px;
     min-height: 100vh;
 }
 
-.showIconContainer{
-    margin-right: 25%;
-
-}
-
-.iconContainer{
-    margin-left: 25% !important;
-}
-
 .inputDiv .sideIcon{
-    background-color: #E28F46;
+    background-color: #FF8F45;
     border-color: white;
     color: white;
     border-right: 0;
     border-width: 1px;
-    border-radius: 15px  !important;
-    border-top-right-radius: 0  !important;
-    border-bottom-right-radius: 0  !important;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .inputDiv .showIcon{
-    background-color: #E28F46;
+    background-color: #FF8F45;
     border-color: white;
     color: black;
     border-left: 0;
@@ -62,10 +53,18 @@ body {
     border-bottom-left-radius: 0;
 }
 
+.showIconContainer{
+    margin-right: 25%;
+
+}
+
+.iconContainer{
+    margin-left: 25%;
+}
 
 .inputDiv .textInput {
     transition: 0.5s;
-    background-color: #E28F46;
+    background-color: #FF8F45;
     border-color: white;
     color: white;
     border-radius: 15px;
@@ -75,7 +74,7 @@ body {
 }
 
 .inputDiv .passInput {
-    background-color: #E28F46;
+    background-color: #FF8F45;
     border-color: white;
     color: white;
     border-left: 0;
@@ -84,7 +83,7 @@ body {
 }
 
 .inputDiv input:focus {
-    background-color: #E28F46;
+    background-color: #FF8F45;
     border-color: white;
     color: white;
     box-shadow: 0 0 0px transparent;
@@ -139,7 +138,7 @@ body {
 .customButton{
     transition: 0.3s;
     border: 3px solid white;
-    background-color: #E28F46;
+    background-color: #FF8F45;
     color: white;
     padding: 5px;
     min-width: 40vw;
@@ -149,7 +148,7 @@ body {
 .customButton:hover{
     transition: 0.3s;
     background-color: white;
-    color: #E28F46;
+    color: #FF8F45;
 }
 
 .googleButton{
@@ -170,7 +169,7 @@ body {
 select{
     border: 3px solid white;
     background-color: white;
-    color: #E28F46;
+    color: #FF8F45;
     padding: 5px;
     min-width: 50%;
     border-radius: 15px;
@@ -192,10 +191,6 @@ border-radius: 15px;
 border-color: transparent;
 height: 40px;
 width: 40px;
-}
-
-.logo{
-margin-top: 25px;
 }
 
 /*Remueve la flecha de los input de tipo numero*/
