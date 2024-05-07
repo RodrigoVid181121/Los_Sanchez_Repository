@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\ServiceProvider;
+
 return [
 
     /*
@@ -65,7 +68,7 @@ return [
     |
     */
 
-    'timezone' => env('APP_TIMEZONE', 'America/Managua'),
+    'timezone' => env('APP_TIMEZONE', 'America/El_Salvador'),
 
     /*
     |--------------------------------------------------------------------------

@@ -6,10 +6,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Tymon\JWTAuth\Contracts\JWTSubjects;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubjects
 {
     use HasFactory, Notifiable;
+
+    public function getJWTIdentifier(){
+        return $this->getkey();
+    }
+    public function getJWTCustomClains(){
+        return [];
+    }
 
     /**
      * The attributes that are mass assignable.
