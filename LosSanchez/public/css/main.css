@@ -31,8 +31,6 @@ body {
     min-height: 100vh;
 }
 
-<<<<<<< HEAD
-=======
 .showIconContainer{
     margin-right: 25%;
 
@@ -42,22 +40,15 @@ body {
     margin-left: 25% !important;
 }
 
->>>>>>> Javier
 .inputDiv .sideIcon{
     background-color: #E28F46;
     border-color: white;
     color: white;
     border-right: 0;
     border-width: 1px;
-<<<<<<< HEAD
-    border-radius: 15px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-=======
     border-radius: 15px  !important;
     border-top-right-radius: 0  !important;
     border-bottom-right-radius: 0  !important;
->>>>>>> Javier
 }
 
 .inputDiv .showIcon{
@@ -71,18 +62,6 @@ body {
     border-bottom-left-radius: 0;
 }
 
-<<<<<<< HEAD
-.showIconContainer{
-    margin-right: 25%;
-
-}
-
-.iconContainer{
-    margin-left: 25%;
-}
-=======
-
->>>>>>> Javier
 
 .inputDiv .textInput {
     transition: 0.5s;
