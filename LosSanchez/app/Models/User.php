@@ -6,16 +6,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Tymon\JWTAuth\Contracts\JWTSubjects;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubjects
+
+class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
 
     public function getJWTIdentifier(){
         return $this->getkey();
     }
-    public function getJWTCustomClains(){
+    public function getJWTCustomClaims(){
         return [];
     }
 
@@ -27,17 +28,18 @@ class User extends Authenticatable implements JWTSubjects
     protected $fillable = [
         'name',
         'email',
+        'phone',
         'password',
+        'remember_token',
+        'user_type'
     ];
-
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'password'
     ];
 
     /**

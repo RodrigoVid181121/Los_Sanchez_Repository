@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Registro</title>
+
+     <!--<script src="../../../js/bootstrap.min.js"></script>-->
+     <script src="../../../js/registroCliente.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        span{
+            color:red;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +36,7 @@
             <button class="googleButton mb-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Sign up
                 with Google</button><br>
 
-            <form action="" method="">
+            <form id="register_form" action="" method="">
 
                 <div class="input-group inputDiv">
                     <span class="input-group-append iconContainer">
@@ -31,89 +44,144 @@
                             <i class="bi bi-person"></i>
                         </span>
                     </span>
-                    <input type="text" class="form-control textInput" id="inputNames" placeholder="Nombres">
-
+                    <input type="text" class="form-control textInput" id="inputNames" name="name" placeholder="Nombres">
                 </div>
-                <div class="error"></div>
-
-                <div class="input-group inputDiv">
-                    <span class="input-group-append iconContainer">
-                        <span class="input-group-text bg-transparent sideIcon">
-                            <i class="bi bi-person"></i>
-                        </span>
-                    </span>
-                    <input type="text" class="form-control textInput" id="inputSurNames" placeholder="Apellidos">
-
-                </div>
-                <div class="error"></div>
-
+                <span class="error name_err"></span>
                 <div class="input-group inputDiv">
                     <span class="input-group-append iconContainer">
                         <span class="input-group-text bg-transparent sideIcon">
                             <i class="bi bi-telephone-fill"></i>
                         </span>
                     </span>
-                    <input type="number" class="form-control textInput" id="inputPhone" maxlength="8" placeholder="Telefono">
-
+                    <input type="number" class="form-control textInput" id="inputPhone" name="phone" maxlength="8" placeholder="Telefono">
                 </div>
-                <div class="error"></div>
-
+                <span class="error phone_err"></span>
                 <div class="input-group inputDiv">
                     <span class="input-group-append iconContainer">
                         <span class="input-group-text bg-transparent sideIcon">
                             <i class="bi bi-envelope-fill"></i>
                         </span>
                     </span>
-                    <input type="email" class="form-control textInput" id="inputEmail" placeholder="Email">
-
+                    <input type="email" class="form-control textInput" id="inputEmail" name="email" placeholder="Email">
                 </div>
-                <div class="error"></div>
-
+                <span class="error email_err"></span>
                 <div class="input-group inputDiv">
                     <span class="input-group-append iconContainer">
                         <span class="input-group-text bg-transparent sideIcon">
                             <i class="bi bi-lock"></i>
                         </span>
                     </span>
-                    <input type="password" class="form-control passInput classInputPasswords" id="inputPass"
+                    <input type="password" class="form-control passInput classInputPasswords" id="inputPass" name="password"
                         placeholder="Contraseña">
                     <span class="input-group-append showIconContainer">
-                        <span class="input-group-text bg-transparent showIcon">
-                            <i class="bi bi-eye-slash-fill" id="showButton" style="color:white;"></i>
+                        <span class="input-group-text bg-transparent showIcon" id="togglePassword">
+                            <i class="bi bi-eye-slash-fill"  style="color:white;"></i>
                         </span>
                     </span>
                 </div>
-                <div class="error"></div>
-
+                <span class="error password_err"></span>
                 <div class="input-group inputDiv">
                     <span class="input-group-append iconContainer">
                         <span class="input-group-text bg-transparent sideIcon">
                             <i class="bi bi-lock"></i>
                         </span>
                     </span>
-                    <input type="password" class="form-control textInput classInputPasswords" id="inputrepPass"
+                    <input type="password" class="form-control textInput classInputPasswords" id="inputrepPass" name="password_confirmation"
                         placeholder="Repita la Contraseña">
-
                 </div>
-                <div class="error"></div>
-
-                <button class="customButton mt-3" id="btnRegister" disabled>Registrarse</button><br>
+                <span class="error password_confirmation_err"></span>
+                <br>                      
+                <input class="customButton mt-3" id="btnRegister" type="submit" value="Registrarse"><br>
 
             </form>
+            <br>
+            <p class="result"></p>
 
 
         </div>
     </div>
     </div>
 
+    <script>
+        $(document).ready(function(){
+            $("#register_form").submit(function(event){
+                event.preventDefault();
+
+                var formData = $(this).serialize();
+
+                $.ajax({
+                    url:"http://localhost:8000/api/register",
+                    type:"POST",
+                    data:formData,
+                    success:function(data){
+                        //console.log(data); //Se envio correctamente
+                        if(data.msg){
+                            $("#register_form")[0].reset();
+                            $(".error").text("");
+                            $(".result").text(data.msg);
+                        }
+                        else{
+                            printErrorMsg(data);
+                        }
+
+                    }
+                });
+            });
+
+            function printErrorMsg(msg){
+                $(".error").text("");
+                $.each(msg,function(key, value){
+
+                    if(key == 'password'){
+                        if(value.length > 1){
+                            $(".password_err").text(value[0]);
+                            $(".password_confirmation_err").text(value[1]);
+                        }else{
+                            if(value[0].includes('password confirmation')){
+                                $("password_confirmation_err").text(value);
+
+                            }
+                            else{
+                                $(".password_err").text(value);
+
+                            }
+
+                        }
+
+                    }else{
+                        $("."+key+"_err").text(value);
+                    }
 
 
-    <!--<script src="../../../js/bootstrap.min.js"></script>-->
-    <script src="../../../js/registroCliente.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  
+                });
+            }
+        });
+
+
+
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            var togglePassword = $('#togglePassword');  
+            var passwordField  = $('#inputPass');
+
+            togglePassword.click(function(){
+                // Si el tipo de campo de contraseña es 'password', cambia a 'text' para mostrar la contraseña
+                // De lo contrario, cambia a 'password' para ocultar la contraseña
+                var type = passwordField.attr('type') === 'password' ? 'text' : 'password';
+                passwordField.attr('type', type);
+
+                // Cambia el ícono entre el ícono de ojo abierto y cerrado
+                if (type === 'password') {
+                    togglePassword.html('<i class="bi bi-eye-slash-fill" style="color:white;"></i>');
+                } else {
+                    togglePassword.html('<i class="bi bi-eye-fill" style="color:white;"></i>');
+                }
+            });
+        });
+    </script>
+        
 </body>
 
 </html>
