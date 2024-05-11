@@ -11,7 +11,7 @@ class ReservationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class ReservationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'cantidad_personas'=>'required|numeric',
+            'TableID'=>'required',
+            'datetime'=>'required'
         ];
     }
 }
