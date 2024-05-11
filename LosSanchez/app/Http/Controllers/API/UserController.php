@@ -120,7 +120,7 @@ class UserController extends Controller
 
 
     public function logout(){
-
+      //sI
       try {
         auth()->logout();
         return response()->json(['success'=>true,'msg'=>'User logged out']);
