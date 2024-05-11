@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +31,9 @@
 </head>
 
 <body>
+
     <div class="Container">
+    
 
         <div class="L-R-Header fontCenter Logo">
             <img src="{{asset('img/Logo_Sanchez.png')}}" alt="Los Sanchez Logo" class="logo">
@@ -122,29 +125,8 @@
 
     </script>
 
+
     @include('header')
-
-
- <!--    <script>
-        $(document).ready(function(){
-
-            $(".logout").click(function(){
-                    $.ajax({
-                        url:"http://localhost:8000/api/logout",
-                        type:"GET",
-                        headers:{'Authorization': localStorage.getItem('user_token')},
-                        success:function(data){
-                            if(data.success == true){
-                                localStorage.removeItem('user_token');
-                                window.open("/","_self");
-                            }
-
-                        }
-                    })
-                    
-                });
-        })
-    </script> -->
 
     <script>
         $(document).ready(function() {
