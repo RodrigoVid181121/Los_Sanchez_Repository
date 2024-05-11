@@ -35,26 +35,18 @@
 
 
             <h2 class="text-xl font-semibold mb-4">Mesas Disponibles</h2>
+            @foreach($tables as $table)
             <div class="space-y-4">
                 <div class="bg-custom p-4 rounded-lg shadow-sm mb-3"> <!-- Añadir margen inferior -->
                     <div class="d-flex justify-content-between align-items-center">
-                        <span>Mesa 1 - Mesa exterior</span>
+                        <span>Mesa {{$table->table_number}} - Mesa exterior</span>
                         <a href="#" class="btn btn-reserva rounded-pill btn-lg col-auto">Reservar</a> <!-- Botón más grande y ovalado -->
                     </div>
                 </div>
-                <div class="bg-custom p-4 rounded-lg shadow-sm mb-3"> <!-- Añadir margen inferior -->
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span>Mesa 3 - Mesa exterior</span>
-                        <a href="#" class="btn btn-reserva rounded-pill btn-lg col-auto">Reservar</a> <!-- Botón más grande y ovalado -->
-                    </div>
-                </div>
-                <div class="bg-custom p-4 rounded-lg shadow-sm"> <!-- No se añade margen inferior al último div -->
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span>Mesa 4 - Mesa interior</span>
-                        <a href="#" class="btn btn-reserva rounded-pill btn-lg col-auto">Reservar</a> <!-- Botón más grande y ovalado -->
-                    </div>
-                </div>
+                
             </div>
+            @endforeach
+            
 
         </div>
     </div>
