@@ -11,6 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:LosSanchez/database/migrations/2024_05_03_024835_create_sessions_table.php
+=======
+>>>>>>> bc190505fa1c5f18449f4a518e0f47630fce12b5
         if(!Schema::hasTable('users')){
         Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -29,6 +34,10 @@ return new class extends Migration
             $table->timestamp('created_at')->nullable();
         });
 
+<<<<<<< HEAD
+=======
+>>>>>>> b094444514cf7208f194d4fb1f3658c245d6e0dc:LosSanchez/database/migrations/0001_01_01_000000_create_users_table.php
+>>>>>>> bc190505fa1c5f18449f4a518e0f47630fce12b5
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
