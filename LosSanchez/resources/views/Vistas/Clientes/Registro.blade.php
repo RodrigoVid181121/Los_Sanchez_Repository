@@ -18,9 +18,13 @@
 
     <style>
         span{
-            color:red;
+            color:blue;
+            font-size:1rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight:bold;
         }
     </style>
+   
 </head>
 
 <body>

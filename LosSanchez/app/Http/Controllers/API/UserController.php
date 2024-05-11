@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\PersonalAccessToken;
 use Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -56,33 +57,76 @@ class UserController extends Controller
      ]);
        
     }
-    
-    public function login(Request $request){
-     $request->validate([
-        'email'=>'required',
-        'password'=>'required'
-     ]);
 
-     $user=User::where('email',$request->email)->first();
+    public function login(Request $request)
+    {
+        $validator=Validator::make($request->all(),[
+            'email'=>'required|string|email',
+            'password'=>'required|string|min:6',
+         ]);
+ 
+        #$credentials = request(['email', 'password']);
+        if($validator->fails()){
+            return response()->json($validator->errors());
+        }
 
-     if(!$user|| !Hash::check($request->password,$user->password)){
-        return response([
-          'message'=>'The provided credentials are incorrect'
+        if(!$token = auth()->attempt($validator->validated())){
+          return response()->json(['success'=>false,'msg'=>'Correo electronico o contraseña invalidas']);
+        }
+        //Obtener el id del usuario autenticado
+        $userId=auth()->user()->id;
+        
+       return  $this->respondWithToken($token,$userId);
+    }
+    protected function respondWithToken($token,$userId)
+    {    
+      #Creamos un objeto de la clase Carbon
+      $currrentDateTime=Carbon::now();
+      $currentDateTime_Now=$currrentDateTime->toDateTimeString();
+
+      #Fecha de expiracion
+      $expiresIn =auth()->factory()->getTTL(); #Obtiene el timepo de vida predeterminado de los tokens
+      $expirationDateTime=$currrentDateTime->addMinutes($expiresIn); # Calcula la fecha y hora exacta en el que el token expirara, pero en minutos
+      $expirationDate_out=$expirationDateTime->toDateTimeString();#Convertimos la fecha y la hora en cadena de texto
+      
+      
+      //Esto se tiene que configurar
+      if($currentDateTime_Now  < $expirationDate_out){
+        $state=1;
+      }
+      else{
+        $state=0;
+      }
+      
+       $ResultadoPersonal=PersonalAccessToken::create([
+          'users_id'=>$userId,
+          'state'=>$state,
+          'last_used_at'=>$expirationDate_out, #Este campo se necesita configurar
+          'expires_at' =>$expirationDate_out,
+          'created_at'=>$currentDateTime_Now
         ]);
-     }
-     $token=$user->createToken('auth_token')->accessToken;
-     return response([
-       'token'=>$token
-     ]);
 
+      return response()->json([
+          'success'=>true,
+          'users_id'=>$userId,
+          'access_token' => $token,
+          'state'=>$state,
+          'last_used_at'=>$expirationDate_out, #Este campo se necesita configurar
+          'expires_at' =>$expirationDate_out,
+          'created_at'=>$currentDateTime_Now
+      ]);
     }
 
-    public function logout(Request $request){
-      $request->user()->token()->revoke();
 
-      return response([
-         'message'=>'Logged out successfully'
-      ]);
- 
+
+    public function logout(){
+
+      try {
+        auth()->logout();
+        return response()->json(['success'=>true,'msg'=>'User logged out']);
+
+      } catch (\Exception $e) {
+        return response()->json(['success'=>false,'msg'=>$e->getMessage()]);
+      }
     }
 }

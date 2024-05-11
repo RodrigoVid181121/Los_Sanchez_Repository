@@ -4,62 +4,169 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
     <link rel="stylesheet" href="{{asset('css/main.css')}}" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Inicio de sesion</title>
+    <title>Registro</title>
+
+         <!--<script src="../../../js/bootstrap.min.js"></script>-->
+         <script src="../../../js/registroCliente.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--> <!-- Tuve problemas con esta etiqueta -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+
+    <style>
+        span{
+            color:blue;
+            font-size:1rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight:bold;
+        }
+    </style>
+   
 </head>
 
 <body>
     <div class="Container">
-        <div class="L-R-Header fontCenter">
+
+        <div class="L-R-Header fontCenter Logo">
             <img src="{{asset('img/Logo_Sanchez.png')}}" alt="Los Sanchez Logo" class="logo">
         </div>
         <div class="L-R-Body fontCenter fontwhite">
-            <h1 class="mb-3">Inicio de sesion</h1>
-            <p>Ingresa tu usuario y contraseña</p>
 
+            <h1>Inicio de Sesión</h1>
+            <p>Ingrese su Correcto electronico y Contraseña</p>
 
+            <form id="login_form" action="" method="">
 
-            <div class="input-group inputDiv">
-                <span class="input-group-append iconContainer">
-                    <span class="input-group-text bg-transparent sideIcon">
-                        <i class="bi bi-person"></i>
+                <div class="input-group inputDiv">
+                    <span class="input-group-append iconContainer">
+                        <span class="input-group-text bg-transparent sideIcon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </span>
                     </span>
-                </span>
-                <input type="email" class="form-control textInput" placeholder="Email">
-
-            </div>
-
-            <div class="input-group inputDiv mt-3">
-                <span class="input-group-append iconContainer">
-                    <span class="input-group-text bg-transparent sideIcon">
-                        <i class="bi bi-lock"></i>
+                    <input type="email" class="form-control textInput" id="inputEmail" name="email" placeholder="Email">
+                </div>
+                <span class="error email_err"></span>
+                <div class="input-group inputDiv">
+                    <span class="input-group-append iconContainer">
+                        <span class="input-group-text bg-transparent sideIcon">
+                            <i class="bi bi-lock"></i>
+                        </span>
                     </span>
-                </span>
-
-                <input type="password" class="form-control passInput" id="idInputPassword" placeholder="Contraseña">
-
-                <span class="input-group-append showIconContainer">
-                    <span class="input-group-text bg-transparent showIcon">
-                    <i class="bi bi-eye-slash-fill" id="showButton"></i>
+                    <input type="password" class="form-control passInput classInputPasswords" id="inputPass" name="password"
+                        placeholder="Contraseña">
+                    <span class="input-group-append showIconContainer">
+                        <span class="input-group-text bg-transparent showIcon" id="togglePassword">
+                            <i class="bi bi-eye-slash-fill"  style="color:white;"></i>
+                        </span>
                     </span>
-                </span>
+                </div>
+                <span class="error password_err"></span><br>
+               <span><a href="#">Olvidaste tu contraseña?</a></span><br><br>
+                <button class="googleButton mb-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Sign up
+                with Google</button><br>
 
-            </div>
-            <a href="#"><span>Olvidaste tu contraseña?</span></a><br>
-            <button class="googleButton mt-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Sign up with Google</button><br>
-                <button class="customButton mt-3">Login</button><br>
+                <input class="customButton mt-3" id="btnRegister" type="submit" value="Login"><br>
+                <span class="mt-3"><a href="registro">Aun no estas registrado? Registrate</a></span>
 
-            <span class="mt-3">Aun no estas registrado?<a href="registro"> Registrate</a></span>
+            </form>
+            <br>
+            <p class="result"></p>
+
+
         </div>
     </div>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#login_form").submit(function(event){
+                event.preventDefault();
 
-    <script src="../../../js/inicioSesion.js"></script>
+                var formData = $(this).serialize();
+
+                $.ajax({
+                    url:"http://localhost:8000/api/login",
+                    type:"POST",
+                    data:formData,
+                    success:function(data){
+                        if(data.success == false){
+                            $(".result").text(data.msg);
+                        }
+                        else if(data.success == true){
+                            $tipo='Bearer';
+                            localStorage.setItem("user_token",$tipo+" "+data.access_token);
+                            window.open("/login","_self");
+                        }
+                        else{
+                            printErrorMsg(data);
+                        }
+
+                    }
+                });
+            });
+
+            function printErrorMsg(msg){
+                $(".error").text("");
+                $.each(msg,function(key, value){
+                    $("."+key+"_err").text(value);
+                });
+            }
+        });
+
+
+
+    </script>
+
+    @include('header')
+
+
+ <!--    <script>
+        $(document).ready(function(){
+
+            $(".logout").click(function(){
+                    $.ajax({
+                        url:"http://localhost:8000/api/logout",
+                        type:"GET",
+                        headers:{'Authorization': localStorage.getItem('user_token')},
+                        success:function(data){
+                            if(data.success == true){
+                                localStorage.removeItem('user_token');
+                                window.open("/","_self");
+                            }
+
+                        }
+                    })
+                    
+                });
+        })
+    </script> -->
+
+    <script>
+        $(document).ready(function() {
+            var togglePassword = $('#togglePassword');  
+            var passwordField  = $('#inputPass');
+
+            togglePassword.click(function(){
+                // Si el tipo de campo de contraseña es 'password', cambia a 'text' para mostrar la contraseña
+                // De lo contrario, cambia a 'password' para ocultar la contraseña
+                var type = passwordField.attr('type') === 'password' ? 'text' : 'password';
+                passwordField.attr('type', type);
+
+                // Cambia el ícono entre el ícono de ojo abierto y cerrado
+                if (type === 'password') {
+                    togglePassword.html('<i class="bi bi-eye-slash-fill" style="color:white;"></i>');
+                } else {
+                    togglePassword.html('<i class="bi bi-eye-fill" style="color:white;"></i>');
+                }
+            });
+        });
+    </script>
+        
 </body>
 
 </html>

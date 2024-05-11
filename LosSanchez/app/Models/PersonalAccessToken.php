@@ -9,19 +9,14 @@ class PersonalAccessToken extends Model
 {
     use HasFactory;
     protected $table = 'personal_access_token';
-    protected $primaryKey='id';
 
-    protected $timestamps=false;
+    public $timestamps=false;
 
-    protected $filllable=[
+    protected $fillable=[
+        'users_id',
         'state',
         'last_used_at',
         'expires_at',
         'created_at',
-        'users_id'
-    ];
-
-    protected $guarded=[
-        
     ];
 }
