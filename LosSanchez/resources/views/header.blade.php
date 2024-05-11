@@ -5,6 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
 
     <script>
+        //HAY QUE VER COMO SE IMPLEMENTA ESTO EN Header.blade.php
         $(document).ready(function(){
 
             $(".logout").click(function(){

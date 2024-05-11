@@ -1,3 +1,4 @@
+
 @extends('Layouts.plantilla')
 @section('content')
 
