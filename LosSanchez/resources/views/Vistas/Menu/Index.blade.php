@@ -1,15 +1,13 @@
 @extends('Layouts.plantilla')
 @section('content')
-
+<script src="{{ asset('js/Menu.js') }}"></script>
 <!-- Agregar un context box para mostrar imágenes locales -->
 <div class="container text-center">
-    <a href="#" class="btn btn-disponibilidad rounded-pill btn-lg btn-orange">Reservar mesa Ahora!</a>
+<a href="{{url('/reservaciones/clientes')}}" class="btn btn-disponibilidad rounded-pill btn-lg btn-orange">Hacer una reservacion</a>
 </div>
 <div class="context-box">
-    <div class="image-container">
-        <img src="../../img/combos.jpg" class="img-fo">
-        <img src="../../img/asados.jpg" class="img-fo">
-        <img src="../../img/complementos.jpg" class="img-fo">
+    <div id="menuResult" class="image-container">
+        
         
     </div>
 </div>

@@ -22,8 +22,7 @@ function getData(){
         dataType: 'json',
         success: function(response){
     
-            var html=''
-            
+            var html=''            
     
             $.each(response.tables, function(index,table){
                 html += '<div class="bg-custom p-4 rounded-lg shadow-sm mb-3">'
@@ -44,6 +43,8 @@ function getData(){
 }
 
 function store(){
+    var $TableDiv =$('#ReservationsTable')
+    var $FreeDiv = $('#freeTables')
     $('#Create').submit(function(event){
 
         var form = $(this).serialize();
@@ -53,6 +54,10 @@ function store(){
             url: '/api/v1/clients/reserve',
             data: form,
             success: function(response){
+                $FreeDiv.empty()
+                $TableDiv.empty()
+                getData()
+                ShowReservations()
             },
             error: function(xhr, status, error){
                 // Manejar errores
@@ -63,6 +68,8 @@ function store(){
 }
 
 function Cancel(){
+    var $TableDiv =$('#ReservationsTable')
+    var $FreeDiv = $('#freeTables')
     $(document).on('submit','#Cancel',function(event){
         var form = $(this)[0]
         var data = new FormData(form)
@@ -79,6 +86,10 @@ function Cancel(){
             contentType:false,
             success: function(data){
                 $('#btnCancel').prop("disabled",false)
+                $FreeDiv.empty()
+                $TableDiv.empty()
+                getData()
+                ShowReservations()
             }
         })
     })

@@ -12,7 +12,7 @@ class Menus extends Model
     protected $table = 'menus';
     protected $primaryKey='id';
 
-    protected $timestamps=false;
+    public $timestamps=true;
 
     protected $filllabel=[
         'name',
