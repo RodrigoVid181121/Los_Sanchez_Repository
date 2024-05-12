@@ -19,7 +19,7 @@
                     <p>Ingresa tus datos</p>
                     <button class="googleButton mb-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png">
                         Sign up with Google</button><br>
-                    <form action="" method="">
+                    <form action="" method="" id="logUser">
 
                         <div class="input-group inputDiv">
                             <span class="input-group-append iconContainer">
@@ -27,7 +27,7 @@
                                     <i class="bi bi-person"></i>
                                 </span>
                             </span>
-                            <input type="text" class="form-control textInput" id="inputNames" placeholder="Nombres">
+                            <input type="text" class="form-control textInput" name="inputNames" id="inputNames" placeholder="Nombres">
 
                         </div>
                         <div class="error"></div>
@@ -47,7 +47,7 @@
                                     <i class="bi bi-telephone-fill"></i>
                                 </span>
                             </span>
-                            <input type="number" class="form-control textInput" id="inputPhone" placeholder="Telefono">
+                            <input type="number" class="form-control textInput" name="inputPhone" id="inputPhone" placeholder="Telefono">
 
                         </div>
                         <div class="error"></div>
@@ -57,7 +57,7 @@
                                     <i class="bi bi-envelope-fill"></i>
                                 </span>
                             </span>
-                            <input type="email" class="form-control textInput" id="inputEmail" placeholder="Email">
+                            <input type="email" class="form-control textInput" name="inputEmail" id="inputEmail" placeholder="Email">
 
                         </div>
                         <div class="error"></div>
@@ -68,8 +68,7 @@
                                     <i class="bi bi-lock"></i>
                                 </span>
                             </span>
-                            <input type="password" class="form-control passInput classInputPasswords" id="inputPass"
-                                placeholder="Contraseña">
+                            <input type="password" class="form-control passInput classInputPasswords" id="inputPass" name="inputPass" placeholder="Contraseña">
                             <span class="input-group-append showIconContainer">
                                 <span class="input-group-text bg-transparent showIcon">
                                     <i class="bi bi-eye-slash-fill" id="showButton"></i>
@@ -91,23 +90,21 @@
                         <div class="error"></div>
 
                         <select name="cargo" id="idSelectCargo">
-                            <option value="" selected>Cargo</option>
+                            <option value="1" selected>Empleado</option>
+                            <option value="2" selected>Administrador</option>
                         </select>
                         <div class="error"></div>
-                        <button class="customButton mt-3" id="btnRegister" disabled>Registrarse</button><br>
-
+                        <button class="customButton mt-3" id="btnRegister" type="submit" disabled>Registrarse</button><br>
                     </form>
                 </div>
 
                 <div class="col-4 pt-5">
-
-                    <div class="employeeContainer">
-                        <div class="row m-0">Employee1 (contenedor de muestra)</div>
-                        <div class="row m-0">Employee1@gmail.com</div>
-                        <button class="deleteButton"><i class="bi bi-trash"></i></button>
-                        <button class="editButton"><i class="bi bi-pencil-square"></i></button>
-
+                <form id="Cards">
+                <input type="hidden" id="mail" name="mail"/>
+                    <div class="employeeContainer" id="empleadostable">
+                       
                     </div>
+                </form>
                 </div>
             </div>
         </div>
@@ -118,5 +115,4 @@
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/assets/js/registroEmpleados.js"></script>
 </body>
-
 </html>

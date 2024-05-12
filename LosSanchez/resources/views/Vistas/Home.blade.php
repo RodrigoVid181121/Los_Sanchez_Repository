@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="row">
-    <div class="container col-sm F-col">
+    <div class="col-sm F-col">
         <div class="box-cont">
             <h2 class="enfasis">Delicioso</h2> 
             <h3>No te quedes sin probar!</h3>

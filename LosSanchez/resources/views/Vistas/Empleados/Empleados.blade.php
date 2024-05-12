@@ -1,5 +1,6 @@
 @extends('Layouts.plantilla')
 @section('content')
+<script src="{{ asset('js/Empleados.js') }}"></script>
 
 <div class="container">
         <div class="L-R-Body fontCenter fontwhite">
@@ -8,9 +9,8 @@
                     <h1 class="mb-3">Registro</h1>
                     <p>Ingresa tus datos</p>
                     <button class="googleButton mb-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png"/>
-                        Sign up with Google</button><br>
-                    <form action="" method="">
-
+                        Sign up with Google</button><br>                  
+                        <form action="" method="" id="logUser">
                         <div class="input-group inputDiv">
                             <span class="input-group-append iconContainer">
                                 <span class="input-group-text bg-transparent sideIcon">
@@ -58,8 +58,7 @@
                                     <i class="bi bi-lock"></i>
                                 </span>
                             </span>
-                            <input type="password" class="form-control passInput classInputPasswords" id="inputPass"
-                                placeholder="Contraseña">
+                            <input type="password" class="form-control passInput classInputPasswords" id="inputPass"placeholder="Contraseña">
                             <span class="input-group-append showIconContainer">
                                 <span class="input-group-text bg-transparent showIcon">
                                     <i class="bi bi-eye-slash-fill" id="showButton"></i>
@@ -81,27 +80,21 @@
                         <div class="error"></div>
 
                         <select name="cargo" id="idSelectCargo">
-                            <option value="" selected>Cargo</option>
+                            <option value="1" selected>Empleado</option>
+                            <option value="2" selected>Administrador</option>
                         </select>
                         <div class="error"></div>
-                        <button class="customButton mt-3" id="btnRegister" disabled>Registrarse</button><br>
-
+                        <button class="customButton mt-3" id="btnRegister" type="submit" disabled>Registrarse</button><br>
                     </form>
                 </div>
 
                 <div class="col-sm pt-5">
-                    <div class="employeeContainer">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="col-md-10">
-                                <span class="txtempl">Employee1 (contenedor de muestra)</span>
-                                <span>Employee1@gmail.com</span>
-                            </div>
-                            <div class="col-md-2">
-                                <button class="deleteButton"><i class="bi bi-trash"></i></button>
-                                <button class="editButton"><i class="bi bi-pencil-square"></i></button>
-                            </div>
-                        </div>
+                <form id="Cards">
+                <input type="hidden" id="mail" name="mail"/>
+                    <div class="employeeContainer" id="empleadostable">
+                       
                     </div>
+                </form>
                 </div>
             </div>
         </div>

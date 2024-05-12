@@ -14,3 +14,10 @@ Route::prefix('/v1/clients')->group(function(){
     Route::post('/reserve', [ReservationController::class,'store']);
     Route::put('/cancelReservation/{id}/{id2}',[ReservationController::class,'cancelReservation']);
 });
+
+Route::prefix('/Empleados')->group(function(){
+    Route::get('/getEmpleados',[ReservationController::class, 'index']);
+    Route::post('/logEmpleados', [ReservationController::class,'store']);
+    Route::put('/editEmpleados/{mail}',[ReservationController::class,'edit']);
+    Route::delete('/deleteEmpleados/{mail}',[ReservationController::class,'destroy']);
+});
