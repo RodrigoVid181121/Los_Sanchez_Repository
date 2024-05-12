@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmpleadosController;
 use App\Http\Controllers\ReservationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,8 +17,8 @@ Route::prefix('/v1/clients')->group(function(){
 });
 
 Route::prefix('/Empleados')->group(function(){
-    Route::get('/getEmpleados',[ReservationController::class, 'index']);
-    Route::post('/logEmpleados', [ReservationController::class,'store']);
-    Route::put('/editEmpleados/{mail}',[ReservationController::class,'edit']);
-    Route::delete('/deleteEmpleados/{mail}',[ReservationController::class,'destroy']);
+    Route::get('/getEmpleados',[EmpleadosController::class, 'index']);
+    Route::post('/logEmpleados', [EmpleadosController::class,'store']);
+    Route::put('/editEmpleados/{mail}',[EmpleadosController::class,'edit']);
+    Route::delete('/deleteEmpleados/{mail}',[EmpleadosController::class,'destroy']);
 });

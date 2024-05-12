@@ -12,8 +12,8 @@ function ShowEmpleados(){
         dataType: 'json',
         success: function(response){
             var html=''
-
-            $.each(response.results, function(index,result){
+            console.log(response.response)
+            $.each(response.response, function(index,result){
                         html+='<div class="row m-0">'+result.name+'</div>'
                         html+='<div class="row m-0">'+result.email+'</div>'
                         html+='<button type="submit" id="deleteButton" class="deleteButton" onclick="getMail('+result.mail+')"><i class="bi bi-trash"></i></button>'
@@ -42,14 +42,16 @@ function deleteEmpleados(){
 
 function logEmpleados(){
     $('#logUser').submit(function(event){
-
+        event.preventDefault()
         var form = $(this).serialize();
+        console.log(form)
 
         $.ajax({
             type:'POST',
             url: '/api/Empleados/logEmpleados',
             data: form,
             success: function(response){
+                console.log(response.response)
             },
             error: function(xhr, status, error){
                 // Manejar errores

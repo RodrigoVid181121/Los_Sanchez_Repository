@@ -14,7 +14,7 @@ class EmpleadosController extends Controller
     public function index()
     {
         //
-        $empleados = User::all()->where ('user_type','=','empleado');
+        $empleados = User::all()->where ('user_type','=','Administrador');
         return response()->json(['response'=>$empleados]);
     }
 
@@ -40,6 +40,7 @@ class EmpleadosController extends Controller
             $user->phone=$request->input('inputPhone'); 
             $user->password=$request->input('inputPass'); 
             $user->user_type=$request->input('cargo'); 
+            $user->remember_token='123jklhdajskgaklj231';
             $user->save();
     }
 
