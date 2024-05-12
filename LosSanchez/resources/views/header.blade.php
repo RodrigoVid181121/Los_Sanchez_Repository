@@ -29,11 +29,9 @@
 
 </head>
 <body>
+    <button href="#" class="btn btn-primary bt-user logout">Cerrar Sesión</button>
 
-    <button style="color=blue;" class="logout">Funciona</button>
-
-
-    <script>
+    <!-- <script>
 
         
      var token = localStorage.getItem('user_token');
@@ -50,7 +48,7 @@
                 window.open('/login','_self');
             }
         }
-    </script> 
+    </script>  -->
 
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,7 +102,7 @@
                         else if(data.success == true){
                             $tipo='Bearer';
                             localStorage.setItem("user_token",$tipo+" "+data.access_token);
-                            window.open("/login","_self");
+                            window.open("/","_self");
                         }
                         else{
                             printErrorMsg(data);
@@ -124,10 +123,6 @@
 
 
     </script>
-
-
-    @include('header')
-
     <script>
         $(document).ready(function() {
             var togglePassword = $('#togglePassword');  

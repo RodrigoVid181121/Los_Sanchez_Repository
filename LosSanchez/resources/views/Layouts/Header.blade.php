@@ -1,4 +1,3 @@
-@include('header')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,11 +35,10 @@
                                     <h3>USUARIO</h3>
                                     <ul>
                                     <li>
-                                    <button href="#" class="btn btn-primary bt-user">Cerrar Sesión</button>
-                                  
+                                    @include('header')                                                                
                                     </li>
                                     <li>
-                                    <button class="btn btn-primary bt-user"><a href="/login">Usu</a></button>
+                                    <button class="btn btn-primary bt-user"><a href="/login">Login</a></button>
                                     </li>       
                                     </ul>
                                 </div>
@@ -52,5 +50,3 @@
             </nav>
 </body>
 </html>
-
-
