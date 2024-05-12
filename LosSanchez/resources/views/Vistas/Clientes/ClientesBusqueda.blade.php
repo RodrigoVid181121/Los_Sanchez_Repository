@@ -17,8 +17,7 @@
 
         @if ($user != null)
             @foreach ($user as $info)
-
-                <form action="{{url('User')}}" method="get">
+            <form action="{{url('User')}}" method="get">
                 <div class="bg-custom p-4 rounded-lg shadow-sm mb-3">
                     <div class="d-flex justify-content-between align-items-center">
 
@@ -42,15 +41,18 @@
                 </form>
             @endforeach
 
+            @else
+            <div class="bg-custom p-4 rounded-lg shadow-sm mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
 
-            <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
-            
-                    <span>{{$user->links()}}</span>
-                
-            </div>
+
+                        <span>No hay registros con el numero solicitado</span>
+
+                    </div>
+                </div>
 
         @endif
-
+        <a href="{{url('user')}}" class="btn btn-success">Regresar</a>
     </div>
 
 
