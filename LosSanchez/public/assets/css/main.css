@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------Contenedores-----------------------*/
+
+.Container {
+    margin: 0;
+    gap: 1.5em;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.L-R-Header {
+    background-color: white;
+    vertical-align: center;
+    height: 20vh;
+    margin: auto;
+}
+
+.L-R-Header img {
+    max-height: 70%;
+}
+
+.L-R-Body {
+    background-color: #FF8F45;
+    padding-top: 25px;
+    min-height: 100vh;
+}
+
+.inputDiv .sideIcon{
+    background-color: #FF8F45;
+    border-color: white;
+    color: white;
+    border-right: 0;
+    border-width: 1px;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.inputDiv .showIcon{
+    background-color: #FF8F45;
+    border-color: white;
+    color: black;
+    border-left: 0;
+    border-width: 1px;
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.showIconContainer{
+    margin-right: 25%;
+
+}
+
+.iconContainer{
+    margin-left: 25%;
+}
+
+.inputDiv .textInput {
+    transition: 0.5s;
+    background-color: #FF8F45;
+    border-color: white;
+    color: white;
+    border-radius: 15px;
+    border-left: 0;
+    margin-right: 25%;
+    margin-bottom: 2px;
+}
+
+.inputDiv .passInput {
+    background-color: #FF8F45;
+    border-color: white;
+    color: white;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 2px;
+}
+
+.inputDiv input:focus {
+    background-color: #FF8F45;
+    border-color: white;
+    color: white;
+    box-shadow: 0 0 0px transparent;
+}
+
+.inputDiv input::placeholder {
+    color: white;
+}
+
+.employeeContainer{
+    transition: 0.3s;
+    width: 100%;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: rgba(206, 211, 255,0.5);
+    color: black;
+}
+
+.employeeContainer:hover{
+    transition: 0.3s;
+    width: 100%;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: rgba(206, 211, 255,1);
+    color: black;
+}
+
+/*-------------pociciones y colores-----------------------*/
+
+.fontCenter {
+    text-align: center;
+}
+
+.fontLeft {
+    text-align: left;
+}
+
+.fontwhite {
+    color: white;
+}
+
+.Container a{
+    text-decoration: none;
+    color: #001CFF;
+}
+ .error{
+    transition: 0.5s;
+    color: red;
+ }
+/*------------------Botones y otros------------------------*/
+
+.customButton{
+    transition: 0.3s;
+    border: 3px solid white;
+    background-color: #FF8F45;
+    color: white;
+    padding: 5px;
+    min-width: 40vw;
+    border-radius: 15px;
+}
+
+.customButton:hover{
+    transition: 0.3s;
+    background-color: white;
+    color: #FF8F45;
+}
+
+.googleButton{
+    transition: 0.3s;
+    border: 3px solid white;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    min-width: 40%;
+    border-radius: 15px;
+}
+
+.googleButton:hover{
+    transition: 0.3s;
+    border-color: #4285f4 #ea4335  #34a853 #fbbc05;
+}
+
+select{
+    border: 3px solid white;
+    background-color: white;
+    color: #FF8F45;
+    padding: 5px;
+    min-width: 50%;
+    border-radius: 15px;
+}
+
+.deleteButton{
+background-color: red;
+color: white;
+border-radius: 15px;
+border-color: transparent;
+height: 40px;
+width: 40px;
+}
+
+.editButton{
+background-color: #374DFF;
+color: white;
+border-radius: 15px;
+border-color: transparent;
+height: 40px;
+width: 40px;
+}
+
+/*Remueve la flecha de los input de tipo numero*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

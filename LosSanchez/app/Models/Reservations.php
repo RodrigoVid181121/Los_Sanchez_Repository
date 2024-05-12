@@ -11,17 +11,19 @@ class Reservations extends Model
     protected $table ='reservations';
     protected $primaryKey='id';
 
-    protected $timestamps=false;
+    public $timestamps=true;
 
-    protected $filllable=[
+    protected $fillable=[
         'num_persons',
         'state',
         'created_at',
         'updated_at',
         'users_id',
         'establishments_id',
-        'tables_id'
-    ];
+        'tables_id',
+        'Fecha',
+        'hora'
+    ];    
 
     protected $guarded=[
 

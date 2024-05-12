@@ -51,7 +51,8 @@
             <button class="googleButton mt-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Sign up with Google</button><br>
                 <button class="customButton mt-3">Login</button><br>
 
-            <span class="mt-3">Aun no estas registrado?<a href="#"> Registrate</a></span>
+
+            <span class="mt-3">Aun no estas registrado?<a href="registro"> Registrate</a></span>
         </div>
     </div>
 
