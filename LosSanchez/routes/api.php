@@ -34,12 +34,6 @@ Route::prefix('/v1/employee')->group(function(){
 });
 
 
-/*
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
-*/
-
 Route::group(['middleware'=>'api'],function($routes){
 
     Route::post('/register',[UserController::class,'register']);

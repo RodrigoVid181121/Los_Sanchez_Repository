@@ -6,22 +6,15 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "illuminate/validation": "*",
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",
-<<<<<<< HEAD
-        "laravel/tinker": "^2.9"
-    },
-    "require-dev": {
-        "fakerphp/faker": "^1.23",
-        "laravel/breeze": "^2.0",
-=======
         "laravel/tinker": "^2.9",
         "tymon/jwt-auth": "^2.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "laravel-lang/common": "^6.2",
->>>>>>> Jose
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
@@ -74,5 +67,17 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.packagist.org",
+            "options": {
+                "ssl": {
+                    "verify_peer": "true"
+                }
+            }
+        }
+    ]
 }

@@ -1,6 +1,7 @@
 @extends('Layouts.plantilla')
 @section('content')
 <script src="{{ asset('js/Reservations.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <div class="max-w-4xl mx-auto p-4">
         <div class="bg-zinc-100 p-4 rounded-lg shadow-md">
@@ -42,6 +43,6 @@
             
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
 
 @stop

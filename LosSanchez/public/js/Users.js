@@ -57,12 +57,13 @@ function registclient(){
         event.preventDefault();
 
         var formData = $(this).serialize();
-
+        console.log(formData)
         $.ajax({
             url:"http://localhost:8000/api/register",
             type:"POST",
             data:formData,
             success:function(data){
+                alert('hecho')
                 //console.log(data); //Se envio correctamente
                 if(data.msg){
                     $("#register_form")[0].reset();
@@ -73,6 +74,10 @@ function registclient(){
                     printErrorMsg(data);
                 }
 
+            },
+            error: function(xhr, status, error){
+                // Manejar errores
+                console.error(xhr.responseText);
             }
         });
     });
@@ -124,3 +129,10 @@ function showPassClient(){
                 }
             });
 }
+
+$(function(){
+    registclient()
+    login()
+    ShowPass()
+    showPassClient()   
+})

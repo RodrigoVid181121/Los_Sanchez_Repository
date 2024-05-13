@@ -14,16 +14,16 @@
                                 <a class="nav-link"><img src="{{asset('img/Logo_Sanchez.png')}}"style="height:4vw;"/></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Home</a>
+                                <a class="nav-link" href="{{url('/')}}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Sobre Nosotros</a>
+                                <a class="nav-link" href="{{url('/aboutUs')}}">Sobre Nosotros</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Menu</a>
+                                <a class="nav-link" href="{{url('/menuclients')}}">Menu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Reservaciones</a>
+                                <a class="nav-link" href="{{url('/reservaciones/clientes')}}">Reservaciones</a>
                             </li>
                             <li class="nav-item">
                                 <div class="action">

@@ -29,14 +29,14 @@ class ReservationController extends Controller
     public function store(ReservationRequest $request)
     {
         if($request){
-            $correo='navasvides@gmail.com';
+            $id_user = $request->cookie('id_user','3');
             $datetime = $request->input('datetime');
             $tableID=$request->input('TableID');
             $date=substr($datetime,0,10);
             $hour=substr($datetime,11,16);
             $reservation = new Reservations;
             $reservation->num_persons=$request->input('cantidad_personas');
-            $reservation->users_id=1;
+            $reservation->users_id=$id_user;
             $reservation->establishments_id=1;
             $reservation->tables_id=$tableID;
             $reservation->Fecha=$date;
@@ -56,10 +56,11 @@ class ReservationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(Request $request)
     {
         //
-        $results = DB::select('SELECT*FROM reservations WHERE state = ? AND users_id=?',['in progress','1']);
+        $id_user = $request->cookie('id_user','3');
+        $results = DB::select('SELECT*FROM reservations WHERE state = ? AND users_id=?',['in progress',$id_user]);
         return response()->json(['results'=>$results]);
     }
 

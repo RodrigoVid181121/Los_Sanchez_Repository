@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\PersonalAccessToken;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\URL;
+use Tymon\JWTAuth\Facades\JWTAuth;
 USE Illuminate\Support\Carbon;
 
 class UserController extends Controller
@@ -75,6 +76,8 @@ class UserController extends Controller
         }
         //Obtener el id del usuario autenticado
         $userId=auth()->user()->id;
+
+        cookie('id_user',$userId,5);
         
        return  $this->respondWithToken($token,$userId);
     }
@@ -85,7 +88,7 @@ class UserController extends Controller
       $currentDateTime_Now=$currrentDateTime->toDateTimeString();
 
       #Fecha de expiracion
-      $expiresIn =auth()->factory()->getTTL(); #Obtiene el timepo de vida predeterminado de los tokens
+      $expiresIn =JWTAuth::factory()->getTTL(); #Obtiene el timepo de vida predeterminado de los tokens
       $expirationDateTime=$currrentDateTime->addMinutes($expiresIn); # Calcula la fecha y hora exacta en el que el token expirara, pero en minutos
       $expirationDate_out=$expirationDateTime->toDateTimeString();#Convertimos la fecha y la hora en cadena de texto
       
