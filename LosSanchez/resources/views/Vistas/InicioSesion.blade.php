@@ -83,66 +83,6 @@
         </div>
     </div>
     </div>
-
-    <script>
-        $(document).ready(function(){
-            $("#login_form").submit(function(event){
-                event.preventDefault();
-
-                var formData = $(this).serialize();
-
-                $.ajax({
-                    url:"http://localhost:8000/api/login",
-                    type:"POST",
-                    data:formData,
-                    success:function(data){
-                        if(data.success == false){
-                            $(".result").text(data.msg);
-                        }
-                        else if(data.success == true){
-                            $tipo='Bearer';
-                            localStorage.setItem("user_token",$tipo+" "+data.access_token);
-                            window.open("/","_self");
-                        }
-                        else{
-                            printErrorMsg(data);
-                        }
-
-                    }
-                });
-            });
-
-            function printErrorMsg(msg){
-                $(".error").text("");
-                $.each(msg,function(key, value){
-                    $("."+key+"_err").text(value);
-                });
-            }
-        });
-
-
-
-    </script>
-    <script>
-        $(document).ready(function() {
-            var togglePassword = $('#togglePassword');  
-            var passwordField  = $('#inputPass');
-
-            togglePassword.click(function(){
-                // Si el tipo de campo de contraseña es 'password', cambia a 'text' para mostrar la contraseña
-                // De lo contrario, cambia a 'password' para ocultar la contraseña
-                var type = passwordField.attr('type') === 'password' ? 'text' : 'password';
-                passwordField.attr('type', type);
-
-                // Cambia el ícono entre el ícono de ojo abierto y cerrado
-                if (type === 'password') {
-                    togglePassword.html('<i class="bi bi-eye-slash-fill" style="color:white;"></i>');
-                } else {
-                    togglePassword.html('<i class="bi bi-eye-fill" style="color:white;"></i>');
-                }
-            });
-        });
-    </script>
         
 </body>
 
