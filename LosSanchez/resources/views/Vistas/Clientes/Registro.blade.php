@@ -7,7 +7,25 @@
     <link rel="stylesheet" href="{{asset('css/main.css')}}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script href= "{{asset('js/Users.js')}}"></script>
     <title>Registro</title>
+
+     <!--<script src="../../../js/bootstrap.min.js"></script>-->
+     <script src="../../../js/registroCliente.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        span{
+            color:blue;
+            font-size:1rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight:bold;
+        }
+    </style>
+   
 </head>
 
 <body>
@@ -23,7 +41,7 @@
             <button class="googleButton mb-3"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Sign up
                 with Google</button><br>
 
-            <form action="" method="">
+            <form id="register_form" action="" method="">
 
                 <div class="input-group inputDiv">
                     <span class="input-group-append iconContainer">
@@ -31,89 +49,64 @@
                             <i class="bi bi-person"></i>
                         </span>
                     </span>
-                    <input type="text" class="form-control textInput" id="inputNames" placeholder="Nombres">
-
+                    <input type="text" class="form-control textInput" id="inputNames" name="name" placeholder="Nombres">
                 </div>
-                <div class="error"></div>
-
-                <div class="input-group inputDiv">
-                    <span class="input-group-append iconContainer">
-                        <span class="input-group-text bg-transparent sideIcon">
-                            <i class="bi bi-person"></i>
-                        </span>
-                    </span>
-                    <input type="text" class="form-control textInput" id="inputSurNames" placeholder="Apellidos">
-
-                </div>
-                <div class="error"></div>
-
+                <span class="error name_err"></span>
                 <div class="input-group inputDiv">
                     <span class="input-group-append iconContainer">
                         <span class="input-group-text bg-transparent sideIcon">
                             <i class="bi bi-telephone-fill"></i>
                         </span>
                     </span>
-                    <input type="number" class="form-control textInput" id="inputPhone" maxlength="8" placeholder="Telefono">
-
+                    <input type="number" class="form-control textInput" id="inputPhone" name="phone" maxlength="8" placeholder="Telefono">
                 </div>
-                <div class="error"></div>
-
+                <span class="error phone_err"></span>
                 <div class="input-group inputDiv">
                     <span class="input-group-append iconContainer">
                         <span class="input-group-text bg-transparent sideIcon">
                             <i class="bi bi-envelope-fill"></i>
                         </span>
                     </span>
-                    <input type="email" class="form-control textInput" id="inputEmail" placeholder="Email">
-
+                    <input type="email" class="form-control textInput" id="inputEmail" name="email" placeholder="Email">
                 </div>
-                <div class="error"></div>
-
+                <span class="error email_err"></span>
                 <div class="input-group inputDiv">
                     <span class="input-group-append iconContainer">
                         <span class="input-group-text bg-transparent sideIcon">
                             <i class="bi bi-lock"></i>
                         </span>
                     </span>
-                    <input type="password" class="form-control passInput classInputPasswords" id="inputPass"
+                    <input type="password" class="form-control passInput classInputPasswords" id="inputPass" name="password"
                         placeholder="Contraseña">
                     <span class="input-group-append showIconContainer">
-                        <span class="input-group-text bg-transparent showIcon">
-                            <i class="bi bi-eye-slash-fill" id="showButton" style="color:white;"></i>
+                        <span class="input-group-text bg-transparent showIcon" id="togglePassword">
+                            <i class="bi bi-eye-slash-fill"  style="color:white;"></i>
                         </span>
                     </span>
                 </div>
-                <div class="error"></div>
-
+                <span class="error password_err"></span>
                 <div class="input-group inputDiv">
                     <span class="input-group-append iconContainer">
                         <span class="input-group-text bg-transparent sideIcon">
                             <i class="bi bi-lock"></i>
                         </span>
                     </span>
-                    <input type="password" class="form-control textInput classInputPasswords" id="inputrepPass"
+                    <input type="password" class="form-control textInput classInputPasswords" id="inputrepPass" name="password_confirmation"
                         placeholder="Repita la Contraseña">
-
                 </div>
-                <div class="error"></div>
-
-                <button class="customButton mt-3" id="btnRegister" disabled>Registrarse</button><br>
+                <span class="error password_confirmation_err"></span>
+                <br>                      
+                <input class="customButton mt-3" id="btnRegister" type="submit" value="Registrarse"><br>
 
             </form>
+            <br>
+            <p class="result"></p>
 
 
         </div>
     </div>
     </div>
-
-
-
-    <!--<script src="../../../js/bootstrap.min.js"></script>-->
-    <script src="../../../js/registroCliente.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  
+        
 </body>
 
 </html>

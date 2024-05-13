@@ -17,4 +17,28 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::get('/login', function () {
+    return view('Vistas.InicioSesion');
+});
+
+Route::get('/clientes', function () {
+    return view('Vistas.Clientes.Clientes');
+});
+Route::get('/registro', function () {
+    return view('Vistas.Clientes.Registro');
+});
+
+
+/*
+    Route::resource('Vistas/Categorias','CategoriaController');
+    Route::resource('Vistas/Menu', 'MenuController');
+
+
+    Route::get('/Vistas/Clientes/Registro', function () {
+        return view('registro');
+    });
+
+    Route::resource('Vistas/Reservaciones',ReservationController::class);
+    Route::resource('Vistas/Menu', 'MenuController');
+
+*/

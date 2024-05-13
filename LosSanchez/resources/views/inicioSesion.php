@@ -19,8 +19,6 @@
             <h1 class="mb-3">Inicio de sesion</h1>
             <p>Ingresa tu usuario y contraseña</p>
 
-
-
             <div class="input-group inputDiv">
                 <span class="input-group-append iconContainer">
                     <span class="input-group-text bg-transparent sideIcon">

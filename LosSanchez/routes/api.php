@@ -3,6 +3,7 @@
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReservationEmployeeController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +31,18 @@ Route::prefix('/v1/employee')->group(function(){
 
     //rutas para menú
     Route::get('/getMenu',[MenuController::class,'GetMenu']);
+});
+
+
+/*
+Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:api');
+*/
+
+Route::group(['middleware'=>'api'],function($routes){
+
+    Route::post('/register',[UserController::class,'register']);
+    Route::post('/login',[UserController::class,'login']);
+    Route::get('/logout',[userController::class,'logout']);
 });

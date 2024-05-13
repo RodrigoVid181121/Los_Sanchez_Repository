@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-nav box-shadow mb-3">
             <div class="box-container">           
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -27,14 +35,11 @@
                                     <h3>USUARIO</h3>
                                     <ul>
                                     <li>
-                                    <button href="#" class="btn btn-primary bt-user">Cerrar Sesión</button>
+                                    @include('header')                                                                
                                     </li>
                                     <li>
-                                    <button href="#" class="btn btn-primary bt-user">Usuarios</button>
-                                    </li>
-                                    <li>
-                                    <button href="#" class="btn btn-primary bt-user">Clientes</button>
-                                    </li>          
+                                    <button class="btn btn-primary bt-user"><a href="/login">Login</a></button>
+                                    </li>       
                                     </ul>
                                 </div>
                                 </div>  
@@ -43,3 +48,5 @@
                     </div>
                 </div>
             </nav>
+</body>
+</html>
