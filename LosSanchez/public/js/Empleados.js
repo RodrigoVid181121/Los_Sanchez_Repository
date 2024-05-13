@@ -16,7 +16,7 @@ function ShowEmpleados(){
             $.each(response.response, function(index,result){
                         html+='<div class="row m-0">'+result.name+'</div>'
                         html+='<div class="row m-0">'+result.email+'</div>'
-                        html+='<button type="submit" id="deleteButton" class="deleteButton" onclick="getMail('+result.mail+')"><i class="bi bi-trash"></i></button>'
+                        html+='<button type="submit" id="deleteButton" class="deleteButton" onclick="getMail('+result.email+')"><i class="bi bi-trash"></i></button>'
             })
             $Panel.append(html)
         }
@@ -24,9 +24,12 @@ function ShowEmpleados(){
 }
 function deleteEmpleados(){
     $(document).on('submit','#Cards',function(event){
+        event.preventDefault()
         var form = $(this)[0]
         var data = new FormData(form)
-        var mail = $('#mail').val();
+        var mail = document.getElementById('mail').value
+
+        alert(mail)
 
         $.ajax({
             type:'DELETE',
@@ -41,6 +44,7 @@ function deleteEmpleados(){
 }
 
 function logEmpleados(){
+    var $Panel=$('#empleadostable')
     $('#logUser').submit(function(event){
         event.preventDefault()
         var form = $(this).serialize();
@@ -52,6 +56,9 @@ function logEmpleados(){
             data: form,
             success: function(response){
                 console.log(response.response)
+                $Panel.empty()
+                $("#logUser")[0].reset();
+                ShowEmpleados()
             },
             error: function(xhr, status, error){
                 // Manejar errores

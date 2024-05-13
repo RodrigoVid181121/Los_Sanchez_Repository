@@ -37,6 +37,9 @@ Route::get('/registro', function () {
     return view('Vistas.Clientes.Registro');
 });
 
+Route::get('/controlEmpleados',function(){
+    return view('Vistas.Empleados.Empleados');
+});
 Route::prefix('/reservaciones')->group(function(){
     Route::get('/clientes', function () {
         return view('Vistas.Reservaciones.ReservacionesClientes');
@@ -54,16 +57,3 @@ Route::get('/menuemployee',function(){
     return view('Vistas.Menu.IndexEmplo');
 });
 
-/*
-    Route::resource('Vistas/Categorias','CategoriaController');
-    Route::resource('Vistas/Menu', 'MenuController');
-
-
-    Route::get('/Vistas/Clientes/Registro', function () {
-        return view('registro');
-    });
-
-    Route::resource('Vistas/Reservaciones',ReservationController::class);
-    Route::resource('Vistas/Menu', 'MenuController');
-
-*/

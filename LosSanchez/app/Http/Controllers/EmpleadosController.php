@@ -14,7 +14,7 @@ class EmpleadosController extends Controller
     public function index()
     {
         //
-        $empleados = User::all()->where ('user_type','=','Administrador');
+        $empleados = User::all()->where ('user_type','=','Empleado');
         return response()->json(['response'=>$empleados]);
     }
 

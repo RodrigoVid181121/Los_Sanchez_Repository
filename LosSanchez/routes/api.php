@@ -3,6 +3,7 @@
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReservationEmployeeController;
+use App\Http\Controllers\EmpleadosController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -39,4 +40,11 @@ Route::group(['middleware'=>'api'],function($routes){
     Route::post('/register',[UserController::class,'register']);
     Route::post('/login',[UserController::class,'login']);
     Route::get('/logout',[userController::class,'logout']);
+});
+
+Route::prefix('/Empleados')->group(function(){
+    Route::get('/getEmpleados',[EmpleadosController::class, 'index']);
+    Route::post('/logEmpleados', [EmpleadosController::class,'store']);
+    Route::put('/editEmpleados/{mail}',[EmpleadosController::class,'edit']);
+    Route::delete('/deleteEmpleados/{mail}',[EmpleadosController::class,'destroy']);
 });
